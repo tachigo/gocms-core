@@ -67,15 +67,19 @@ cmd_link() {
         exit 1
     fi
 
-    local module_src="../../${GOCMS_MODULES_PATH}/${name}"
-    local target_path="${name}"
-    cd "${PROJECT_ROOT}/src/module"
+    # 确保目标目录存在
+    local module_target_dir="${PROJECT_ROOT}/src/module"
+    mkdir -p "$module_target_dir"
+
+    # 执行软链挂载 (使用绝对路径保证 100% 成功)
+    local module_src="${GOCMS_MODULES_PATH}/${name}"
+    local target_path="${module_target_dir}/${name}"
+
     if [[ ! -d "$module_src" ]]; then
         log_err "错误: 模块源码不存在: $module_src"
         exit 1
     fi
 
-    mkdir -p "${PROJECT_ROOT}/src/module"
     ln -sf "$module_src" "$target_path"
     log_ok "模块软链已挂载: $target_path"
 
