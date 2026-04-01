@@ -1,0 +1,1 @@
+../../../docs/gocms/v2/architecture.md
