@@ -6,3 +6,4 @@ src/data
 deploy/backups
 .DS_Store
 src/module/*
+go.sum
