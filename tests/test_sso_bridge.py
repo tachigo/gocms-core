@@ -5,7 +5,7 @@ SSO Bridge 集成测试
 import pytest
 import requests
 
-BASE_URL = "http://localhost:8080"
+BASE_URL = "http://pre-demo.gocms.tachigo.com"
 
 
 class TestSSOBridge:
