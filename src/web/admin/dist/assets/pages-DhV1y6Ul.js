@@ -1,0 +1,1 @@
+import{C as a}from"./index-KTLC-dxx.js";const t=s=>a.get("/admin/pages",{params:s}),g=s=>a.get(`/admin/pages/${s}`),p=s=>a.post("/admin/pages",s),n=s=>a.put(`/admin/pages/${s.id}`,s),i=s=>a.delete(`/admin/pages/${s}`),o=s=>a.post(`/admin/pages/${s}/publish`),d=s=>a.post(`/admin/pages/${s}/unpublish`);export{g as a,n as b,p as c,i as d,t as g,o as p,d as u};

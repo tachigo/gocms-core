@@ -1,0 +1,42 @@
+# GoCMS 站点配置
+# settings module 从此文件加载站点信息
+
+name: "GoCMS Demo"
+description: "基于 GoCMS v2.0 的内容管理系统"
+url: "https://pre-demo.gocms.tachigo.com"
+logo: "/logo.png"
+favicon: "/favicon.ico"
+language: "zh-CN"
+timezone: "Asia/Shanghai"
+
+seo:
+  title_suffix: " | GoCMS"
+  description: "基于 GoCMS 构建的现代内容管理系统"
+  keywords: "cms, headless, golang"
+
+pagination:
+  default_page_size: 20
+  max_page_size: 100
+
+# 图片样式配置（供 media module 使用）
+image_styles:
+  thumbnail:
+    width: 150
+    height: 150
+    mode: crop
+    quality: 85
+  medium:
+    width: 600
+    height: 400
+    mode: fit
+    quality: 90
+  large:
+    width: 1200
+    height: 800
+    mode: fit
+    quality: 95
+
+# 联系方式（管理员可见）
+contact:
+  email: "admin@gocms.local"
+  phone: "+86 138-xxxx-xxxx"

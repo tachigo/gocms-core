@@ -1,0 +1,1 @@
+import{C as s}from"./index-KTLC-dxx.js";const o=()=>s.get("/admin/taxonomies"),a=e=>s.get(`/admin/taxonomies/${e}/terms`),n=(e,t)=>s.post(`/admin/taxonomies/${e}/terms`,t),i=(e,t)=>s.put(`/admin/taxonomies/${e}/terms/${t.id}`,t),r=(e,t)=>s.delete(`/admin/taxonomies/${e}/terms/${t}`);export{a,n as c,r as d,o as g,i as u};

@@ -1,0 +1,141 @@
+/* GoCMS v2.0 Admin - Global Styles & Design Tokens */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== Design Tokens (CSS Variables) ========== */
+:root {
+  /* 主色 - 品牌色 */
+  --cms-color-primary: #409eff;
+  --cms-color-primary-light: #66b1ff;
+  --cms-color-primary-dark: #3a8ee6;
+
+  /* 语义色 */
+  --cms-color-success: #67c23a;
+  --cms-color-warning: #e6a23c;
+  --cms-color-danger: #f56c6c;
+  --cms-color-info: #909399;
+
+  /* 中性色 */
+  --cms-text-primary: #303133;
+  --cms-text-regular: #606266;
+  --cms-text-secondary: #909399;
+  --cms-text-placeholder: #c0c4cc;
+
+  /* 背景色 */
+  --cms-bg-page: #f5f7fa;
+  --cms-bg-card: #ffffff;
+  --cms-bg-sidebar: #1d1e1f;
+
+  /* 边框 */
+  --cms-border-color: #dcdfe6;
+  --cms-border-light: #e4e7ed;
+
+  /* 布局尺寸 */
+  --cms-sidebar-width: 220px;
+  --cms-sidebar-collapsed-width: 64px;
+  --cms-header-height: 56px;
+
+  /* 圆角 */
+  --cms-radius-sm: 4px;
+  --cms-radius-md: 8px;
+  --cms-radius-lg: 12px;
+
+  /* 阴影 */
+  --cms-shadow-sm: 0 1px 2px hsla(220, 13%, 13%, 0.05);
+  --cms-shadow-md: 0 4px 12px hsla(220, 13%, 13%, 0.1);
+  --cms-shadow-lg: 0 8px 24px hsla(220, 13%, 13%, 0.12);
+
+  /* 过渡 */
+  --cms-transition: 0.3s ease;
+}
+
+/* ========== 全局基础样式 ========== */
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  color: var(--cms-text-primary);
+  background: var(--cms-bg-page);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== ElementPlus 主题覆盖 ========== */
+.el-menu--vertical {
+  border-right: none !important;
+}
+
+/* 卡片统一风格 */
+.cms-card {
+  background: var(--cms-bg-card);
+  border-radius: var(--cms-radius-md);
+  box-shadow: var(--cms-shadow-sm);
+  padding: 20px;
+}
+
+/* 页面容器 */
+.cms-page {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* 表格容器 */
+.cms-table-card {
+  background: var(--cms-bg-card);
+  border-radius: var(--cms-radius-md);
+  box-shadow: var(--cms-shadow-sm);
+  padding: 20px;
+
+  .el-table {
+    --el-table-border-color: var(--cms-border-light);
+  }
+}
+
+/* 表单页容器 */
+.cms-form-card {
+  background: var(--cms-bg-card);
+  border-radius: var(--cms-radius-md);
+  box-shadow: var(--cms-shadow-sm);
+  padding: 24px 32px;
+  max-width: 900px;
+}
+
+/* 页面头部 */
+.cms-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--cms-text-primary);
+  }
+}
+
+/* 筛选栏 */
+.cms-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #c0c4cc;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

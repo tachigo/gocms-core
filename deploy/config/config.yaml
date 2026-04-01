@@ -1,0 +1,39 @@
+# GoCMS v2.0 应用配置
+# 框架通过 GoFrame g.Cfg() 加载此文件
+
+server:
+  address: ":8080"              # HTTP 监听地址
+  openapiPath: "/api.json"      # OpenAPI 文档路径
+  swaggerPath: "/swagger"       # Swagger UI 路径
+
+database:
+  driver: "sqlite"              # sqlite / postgres
+  dsn: "data/gocms.db"         # SQLite 文件路径 / PostgreSQL 连接串
+
+cache:
+  driver: "bigcache"            # bigcache / redis
+  ttl: 600                      # 默认缓存过期时间（秒）
+
+jwt:
+  secret: "gocms-dev-secret-change-in-production"  # ⚠️ 生产环境必须修改
+  expire: 24                    # Token 过期时间（小时）
+  issuer: "gocms"               # JWT 签发者
+
+# 用户模块配置
+user:
+  mode: "slave"                 # master | slave
+                                # master: 独立运行，拥有完整用户管理功能
+                                # slave:  作为SSO客户端运行，依赖上游SSO系统鉴权
+
+# 权限模块配置
+permission:
+  role_mapping:                 # SSO 角色到本地角色的映射表
+    "sso_manager": "admin"      # SSO 管理员映射到本地 admin 角色
+    "sso_editor": "editor"      # SSO 编辑映射到本地 editor 角色
+    "sso_author": "author"      # SSO 作者映射到本地 author 角色
+    "sso_viewer": "viewer"      # SSO 访客映射到本地 viewer 角色
+
+# 日志配置（GoFrame 内置）
+logger:
+  level: "all"
+  stdout: true
