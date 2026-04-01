@@ -6,6 +6,8 @@ require (
 	github.com/allegro/bigcache/v3 v3.1.0
 	github.com/glebarez/sqlite v1.11.0
 	github.com/gogf/gf/v2 v2.8.3
+	github.com/golang-jwt/jwt/v5 v5.3.1
+	golang.org/x/crypto v0.30.0
 	gorm.io/gorm v1.25.12
 )
 
