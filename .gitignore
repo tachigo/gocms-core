@@ -5,4 +5,4 @@ src/gocms
 src/data
 deploy/backups
 .DS_Store
-src/internal/module/*
+src/module/*
