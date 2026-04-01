@@ -3,6 +3,6 @@
 package cmd
 
 import (
-	_ "gocms/internal/module/user"
+	_ "gocms/module/user"
 	// 自动导入的模块将插入此处
 )

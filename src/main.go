@@ -5,7 +5,7 @@ package main
 import (
 	"github.com/gogf/gf/v2/os/gctx"
 
-	"github.com/tachigo/gocms-core/internal/cmd"
+	"gocms/cmd"
 )
 
 func main() {

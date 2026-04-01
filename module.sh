@@ -67,9 +67,9 @@ cmd_link() {
         exit 1
     fi
 
-    local module_src="../../../${GOCMS_MODULES_PATH}/${name}"
-    local target_path="${PROJECT_ROOT}/src/module/${name}"
-
+    local module_src="../../${GOCMS_MODULES_PATH}/${name}"
+    local target_path="${name}"
+    cd "${PROJECT_ROOT}/src/module"
     if [[ ! -d "$module_src" ]]; then
         log_err "错误: 模块源码不存在: $module_src"
         exit 1
