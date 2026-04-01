@@ -16,7 +16,7 @@ import (
 
 	"github.com/glebarez/sqlite"
 
-	"gocms/internal/core"
+	"gocms/core"
 )
 
 // Main 根命令，程序入口
