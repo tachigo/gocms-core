@@ -23,3 +23,11 @@ jwt:
 logger:
   level: "all"
   stdout: true
+
+# 用户与权限 (SSO Bridge 配置)
+user:
+  mode: "slave"                 # slave 模式：依赖外部 SSO 鉴权
+
+permission:
+  role_mapping:
+    "sso_manager": "admin"      # 将 SSO 角色映射为本地角色

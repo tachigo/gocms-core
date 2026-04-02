@@ -20,7 +20,7 @@ class TestSSOBridge:
             "X-SSO-User-ID": "999",
             "X-SSO-User-Name": "virtual_sso_user",
             "X-SSO-User-Email": "sso@example.com",
-            "X-SSO-User-Roles": "sso_manager",  # 应映射为本地 admin
+            "X-SSO-User-Role": "sso_manager",  # 应映射为本地 admin
             "X-SSO-Auth-Source": "test-idp"
         }
         
