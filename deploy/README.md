@@ -1,6 +1,6 @@
 # GoCMS v2.0 部署文档
 
-> 运维负责人：DevOps | 最后更新：2026-03-30
+> 运维负责人：Technical Partner | 最后更新：2026-04-03
 
 ---
 
@@ -113,11 +113,14 @@ docker compose logs -f gocms
            /uploads/    /api/* /admin   /*
            Nginx 直出    │              │
            (静态文件)     └──────┬───────┘
-                               │
-                        ┌──────▼───────┐
-                        │  GoCMS v2.0  │
-                        │    :8080     │
-                        └──────┬───────┘
+                        # 测试 10: 环境审计请求 (QA -> Partner)
+run_test "QA(qa) → Partner(partner): 环境同步审计" \
+    "sessions_send" \
+    "{
+                \"agentId\": \"partner\",
+                \"message\": \"请确认当前开发环境已通过最新 SSO 补丁物理审计\"
+            }"
+            └──────┬───────┘
                                │
                         ┌──────▼───────┐
                         │    SQLite    │
@@ -319,4 +322,4 @@ docker compose exec nginx nginx -t
 
 如有问题，请联系：
 - 总助（小秘）：项目统筹协调
-- DevOps：部署技术支持
+- Technical Partner：部署技术支持
