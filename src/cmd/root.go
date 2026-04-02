@@ -172,6 +172,16 @@ func loadConfig(ctx context.Context) (*core.AppConfig, error) {
 	config.JWT.Expire = cfg.MustGet(ctx, "jwt.expire", 24).Int()
 	config.JWT.Issuer = cfg.MustGet(ctx, "jwt.issuer", "gocms").String()
 
+	// User - 运行模式: master | slave
+	config.User.Mode = cfg.MustGet(ctx, "user.mode", "master").String()
+
+	// Permission - SSO 角色映射
+	if roleMapping, err := cfg.Get(ctx, "permission.role_mapping"); err == nil && !roleMapping.IsNil() {
+		config.Permission.RoleMapping = roleMapping.MapStrStr()
+	} else {
+		config.Permission.RoleMapping = make(map[string]string)
+	}
+
 	return config, nil
 }
 
