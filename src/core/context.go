@@ -20,10 +20,10 @@ const (
 
 // UserInfo 用户信息结构体（用于SSO上下文传递）
 type UserInfo struct {
-	ID       int64  `json:"id"`
-	Username string `json:"username"`
-	Email    string `json:"email,omitempty"`
-	Role     string `json:"role,omitempty"`
+	ID       int64    `json:"id"`
+	Username string   `json:"username"`
+	Email    string   `json:"email,omitempty"`
+	Roles    []string `json:"roles,omitempty"` // 多角色支持
 	// SSO模式下的原始令牌信息
 	SSOToken string `json:"-"`
 }
