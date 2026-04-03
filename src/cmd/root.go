@@ -101,10 +101,9 @@ func runServer(ctx context.Context, parser *gcmd.Parser) error {
 	app := core.NewApp(db, cache, events, appConfig, log)
 
 	// ------------------------------------------------------------------
-	// 6. 创建 Registry 并注册内置 Module
+	// 6. 获取全局 Registry（模块已通过 init() 自注册）
 	// ------------------------------------------------------------------
-	registry := core.NewRegistry(log)
-	registerBuiltinModules(registry)
+	registry := core.GetGlobalRegistry()
 
 	// ------------------------------------------------------------------
 	// 7. 按依赖拓扑排序，逐个初始化所有 Module
